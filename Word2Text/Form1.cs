@@ -60,7 +60,7 @@ namespace Word2Text
             Encoding sjisEnc = Encoding.GetEncoding("UTF-8");
             StreamReader reader = new StreamReader(path, sjisEnc);
             string r_txt = reader.ReadToEnd();
-            string w_txt = r_txt.Trim().Replace("\r\n", "%K%P");
+            string w_txt = r_txt.Replace("\r\n", "%K%P").Replace(" ", "");
             reader.Close();
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Filter = "テキストファイル|*.txt";
