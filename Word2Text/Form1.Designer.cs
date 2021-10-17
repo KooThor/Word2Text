@@ -92,6 +92,7 @@ namespace Word2Text
             this.rdo_word.TabIndex = 4;
             this.rdo_word.Text = "Word";
             this.rdo_word.UseVisualStyleBackColor = true;
+            this.rdo_word.Visible = false;
             this.rdo_word.CheckedChanged += new System.EventHandler(this.rdo_CheckedChanged);
             // 
             // btn_trans_word
