@@ -62,11 +62,13 @@ namespace Word2Text
             Encoding sjisEnc = Encoding.GetEncoding("UTF-8");
             StreamReader reader = new StreamReader(path, sjisEnc);
             string r_txt = reader.ReadToEnd();
-            string w_txt = r_txt.Replace("\r\n", "%K%P").Replace(" ", "");
+            string w_txt = r_txt.Replace("%K%P\r\n", "%K%P").Replace(" ", "");
+            w_txt = w_txt.Replace("\r\n", "%K%P").Replace(" ", "");
             reader.Close();
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Filter = "テキストファイル|*.txt";
             saveFileDialog1.Title = "Save an Text File";
+            saveFileDialog1.FileName = path.Split('\\').Last();
             saveFileDialog1.ShowDialog();
             if (saveFileDialog1.FileName != "")
             {
